@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>regisration page</title>
+</head>
+<body>
+
+{{#messages}}
+    <div align="center">
+        <b>{{messages}}</b>
+
+{{/messages}}
+</div>
+
+<div align="center">
+    <form action="/registration" method="post">
+        <div><label> Логин : <input type="text" name="username"/> </label></div>
+        <div><label> Пароль : <input type="password" name="password"/> </label></div>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <div><input type="submit" value="регистрация"/></div>
+
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<head>
+    <title>UserRoom</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+{{#user}}
+    <div align="center">
+        <b>Привет ,{{username}}</b>
+        <b>Tвой балан равен : {{cash}}</b>
+        <b>Tвоя скидка равна : {{discount}}</b>
+{{/user}}
+
+</div>
+
+</div>
+<div>корзина</div>
+{{#evidence}}
+    <div>
+        <b>{{id}}</b>
+        <b>{{total}}</b>
+        <span>{{status}}</span>
+        <form action="/pay" method="post">
+            <input type="hidden" name="id" value="{{id}}"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="submit" value="Оплатить заказ"/>
+        </form>
+{{/evidence}}
+</div>
+<div>архив заказов</div>
+{{#evidence1}}
+    <div>
+        <b>{{id}}</b>
+        <b>{{date}}</b>
+        <span>{{status}}</span>
+
+{{/evidence1}}
+</div>
+<div align="center>">
+    <form action="/us" method="post">
+        <input type="number" name="id" placeholder="id"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="submit" value="расшифрока заказа"/>
+    </form>
+</div>
+<div align="center">
+    <form action="/main" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="submit" value="На главную"/>
+    </form>
+
+</div>
+<div align="center">
+    <form action="/logout" method="post">
+        <input type="submit" value="Выход"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+</body>

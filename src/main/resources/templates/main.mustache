@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div align="center">Список товаров</div>
+{{#flowers}}
+    <div align="center">
+        <b>{{name}}</b>
+        <span>{{price}}</span>
+        <i>{{amount}}</i>
+        <form action="/ss" method="post">
+            <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" required/>
+            <input type="hidden" name="flowername" value="{{name}}"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="submit" value="положить в корзину"/>
+        </form>
+{{/flowers}}
+
+</div>
+<div align="center">
+    <form action="/userroom" method="post">
+        <input type="submit" value="Корзина"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+</div>
+<div align="center">
+    <form action="/logout" method="post">
+        <input type="submit" value="Выход"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+    </form>
+</div>
+</body>
+
