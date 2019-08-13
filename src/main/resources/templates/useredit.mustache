@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FlowerShop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div>Правка статуса пользователей</div>
+    <div>
+        <form action="/user" method="post">
+            <input type="text" name="username"value="{{user.username}}">
+            {{#roles}}
+            <div>
+                <label><input type="checkbox" name="{{name}}" ${name?seq_contains(role)?string("cheked","")}>{{name}}</label>
+
+            </div>
+                {{/roles}}
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="hidden" name="userId"value="{{user.id}}">
+
+            <button type="submit"> Правка</button>
+        </form>
+
+</div>
+<div align="center">
+    <a href="/room">Продолжить покупки</a>
+
+</div>
+</body>
+</html>

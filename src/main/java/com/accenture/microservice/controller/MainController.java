@@ -44,7 +44,6 @@ public class MainController {
     public String view(Map<String, Object> model) {
         Iterable<FlowerEntity> flowers = flowerRepo.findAll();
         model.put("flowers", flowers);
-        // Object pr= SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return "main";
     }
 

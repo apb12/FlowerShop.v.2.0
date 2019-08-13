@@ -29,8 +29,6 @@
         <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" placeholder="количество"/>
-        <!--    <input type="integer" name="price" placeholder="цена"/>-->
-        <!--    <input type="integer" name="amount" placeholder="количество"/>-->
         <button type="submit">Добавить количество</button>
     </form>
 </div>
@@ -57,6 +55,9 @@
 
 <div align="center">
     <a href="/admin2">Обработка заказов</a>
+</div>
+<div align="center">
+    <a href="/user">Пользователи</a>
 </div>
 <div align="center">
     <form action="/logout" method="post">

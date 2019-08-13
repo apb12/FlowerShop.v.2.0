@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>FlowerShop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div>Список пользователей</div>
+{{#usrlist}}
+    <div>
+        <b>{{username}}</b>
+        {{#roles}}
+            <b>{{name}}</b>
+        {{/roles}}
+    <a href="/user/{{id}}">Правка</a>
+
+{{/usrlist}}
+</div>
+<div align="center">
+    <a href="/room">Продолжить покупки</a>
+
+</div>
+</body>
+</html>
