@@ -48,14 +48,18 @@ public class AdminEvidenceController {
     public String doEvidence(@RequestParam Long id) {
         Evidence e = evidenceRepo.findById(id).get();
         User u = userRepo.findById(e.getUser().getId()).get();
-        e.setStatus(EvidenceStatus.CLOSED);
-        evidenceRepo.save(e);
+        if(u.getCash()>(e.getTotal() * ((1 - (u.getDiscount() / 100))))){
         u.setCash(u.getCash() - (e.getTotal() * ((1 - (u.getDiscount() / 100)))));
         userRepo.save(u);
+            e.setStatus(EvidenceStatus.CLOSED);
+            evidenceRepo.save(e);
         for (Bucket b : e.getBucket()) {
             b.getFlower().setAmount(b.getFlower().getAmount() - b.getAmount());
             flowerRepo.save(b.getFlower());
         }
+        return "redirect:/admin2";}
+        else e.setStatus(EvidenceStatus.DRAFT);
+        evidenceRepo.save(e);
         return "redirect:/admin2";
 
     }
