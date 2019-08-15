@@ -1,7 +1,6 @@
 package com.accenture.microservice.controller;
 
 import com.accenture.microservice.entity.FlowerEntity;
-import com.accenture.microservice.repos.EvidenceRepo;
 import com.accenture.microservice.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,8 +18,6 @@ public class AdminController {
 
     @Autowired
     FlowerService flowerService;
-    @Autowired
-    EvidenceRepo evidenceRepo;
 
     @GetMapping("admin")
     public String view(Map<String, Object> model) {

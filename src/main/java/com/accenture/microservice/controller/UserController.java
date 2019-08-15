@@ -3,7 +3,6 @@ package com.accenture.microservice.controller;
 
 import com.accenture.microservice.Enums.Role;
 import com.accenture.microservice.entity.User;
-import com.accenture.microservice.repos.UserRepo;
 import com.accenture.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

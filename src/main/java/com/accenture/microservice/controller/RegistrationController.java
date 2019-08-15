@@ -1,9 +1,7 @@
 package com.accenture.microservice.controller;
 
 import com.accenture.microservice.entity.User;
-import com.accenture.microservice.repos.UserRepo;
 import com.accenture.microservice.service.UserService;
-import com.accenture.microservice.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

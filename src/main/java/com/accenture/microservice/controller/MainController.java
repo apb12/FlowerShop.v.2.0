@@ -5,8 +5,8 @@ import com.accenture.microservice.entity.Bucket;
 import com.accenture.microservice.entity.Evidence;
 import com.accenture.microservice.entity.FlowerEntity;
 import com.accenture.microservice.entity.User;
-import com.accenture.microservice.repos.BucketRepo;
-import com.accenture.microservice.repos.EvidenceRepo;
+import com.accenture.microservice.service.BucketService;
+import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -28,9 +28,9 @@ public class MainController {
     @Autowired
     private FlowerService flowerService;
     @Autowired
-    private EvidenceRepo evidenceRepo;
+    private EvidenceService evidenceService;
     @Autowired
-    private BucketRepo bucketRepo;
+    private BucketService bucketService;
 
 
     @GetMapping("/")
@@ -52,7 +52,7 @@ public class MainController {
         e.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         e.setStatus(EvidenceStatus.DRAFT);
         e.setTotal(0.0);
-        evidenceRepo.save(e);
+        evidenceService.save(e);
         model.addAttribute(e);
         return "redirect:/m";
 
@@ -66,7 +66,7 @@ public class MainController {
         b.setAmount(amount);
         b.setEvidence(evidence);
         b.setSum(f.getPrice() * amount);
-        bucketRepo.save(b);
+        bucketService.save(b);
         return "redirect:/m";
     }
 }
