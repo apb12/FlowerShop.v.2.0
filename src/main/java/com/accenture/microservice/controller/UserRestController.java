@@ -2,7 +2,7 @@ package com.accenture.microservice.controller;
 
 
 import com.accenture.microservice.entity.User;
-import com.accenture.microservice.repos.UserRepo;
+import com.accenture.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserRestController {
     @Autowired
-    UserRepo userRepo;
+    UserService userService;
 
     @RequestMapping("/rest")
     public User restUser(@RequestParam(value = "name")String name){
-       return userRepo.findByUsername(name);
+       return userService.findByUsername(name);
 
     }
     @RequestMapping("/cash")
     public User restAddCash(@RequestParam(value="name")String name,@RequestParam(value = "cash")Double cash){
-       User u= userRepo.findByUsername(name);
+       User u= userService.findByUsername(name);
        u.setCash(cash);
-       userRepo.save(u);
+       userService.save(u);
        return u;
 
     }
@@ -30,7 +30,7 @@ public class UserRestController {
     @RequestMapping("/check")
     public boolean checkLogin(@RequestParam(value = "username") String username){
         if(
-        userRepo.findByUsername(username)==null){
+        userService.findByUsername(username)==null){
             return false;}
         return true;
 

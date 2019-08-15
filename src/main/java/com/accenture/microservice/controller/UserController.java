@@ -4,6 +4,7 @@ package com.accenture.microservice.controller;
 import com.accenture.microservice.Enums.Role;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.repos.UserRepo;
+import com.accenture.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -22,11 +23,11 @@ import java.util.stream.Collectors;
 public class UserController {
 
     @Autowired
-    private UserRepo userRepo;
+    UserService userService;
 
     @GetMapping
     public String userContr(Model model){
-        List<User>ul=userRepo.findAll();
+        List<User>ul=userService.findAll();
         model.addAttribute("usrlist",ul);
         return "/user";
     }
@@ -52,7 +53,7 @@ public class UserController {
                 user.getRoles().add(Role.valueOf(key));
             }
         }
-        userRepo.save(user);
+        userService.save(user);
         return "redirect:/user";
 
     }

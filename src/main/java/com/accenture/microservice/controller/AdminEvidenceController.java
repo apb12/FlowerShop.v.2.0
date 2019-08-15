@@ -6,7 +6,8 @@ import com.accenture.microservice.entity.Evidence;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.repos.EvidenceRepo;
 import com.accenture.microservice.repos.FlowerRepo;
-import com.accenture.microservice.repos.UserRepo;
+import com.accenture.microservice.service.FlowerService;
+import com.accenture.microservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -22,11 +23,12 @@ import java.util.Map;
 public class AdminEvidenceController {
 
     @Autowired
-    EvidenceRepo evidenceRepo;
+    private   EvidenceRepo evidenceRepo;
     @Autowired
-    UserRepo userRepo;
+    private UserService userService;
+
     @Autowired
-    FlowerRepo flowerRepo;
+    private FlowerService flowerService;
 
     @GetMapping("/admin2")
     public String view(Map<String, Object> model) {
@@ -49,15 +51,15 @@ public class AdminEvidenceController {
     @PostMapping("admin3")
     public String doEvidence(@RequestParam Long id) {
         Evidence e = evidenceRepo.findById(id).get();
-        User u = userRepo.findById(e.getUser().getId()).get();
+        User u = userService.findById(e.getUser().getId());
         if(u.getCash()>(e.getTotal() * ((1 - (u.getDiscount() / 100))))){
         u.setCash(u.getCash() - (e.getTotal() * ((1 - (u.getDiscount() / 100)))));
-        userRepo.save(u);
+        userService.save(u);
             e.setStatus(EvidenceStatus.CLOSED);
             evidenceRepo.save(e);
         for (Bucket b : e.getBucket()) {
             b.getFlower().setAmount(b.getFlower().getAmount() - b.getAmount());
-            flowerRepo.save(b.getFlower());
+            flowerService.save(b.getFlower());
         }
         return "redirect:/admin2";}
         else e.setStatus(EvidenceStatus.DRAFT);

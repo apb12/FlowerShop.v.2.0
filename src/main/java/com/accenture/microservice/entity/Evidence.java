@@ -3,11 +3,12 @@ package com.accenture.microservice.entity;
 import com.accenture.microservice.Enums.EvidenceStatus;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Evidence {
+public class Evidence implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

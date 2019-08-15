@@ -1,9 +1,10 @@
 package com.accenture.microservice.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Bucket {
+public class Bucket implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

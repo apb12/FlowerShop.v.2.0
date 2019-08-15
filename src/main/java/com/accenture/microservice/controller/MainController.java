@@ -7,8 +7,7 @@ import com.accenture.microservice.entity.FlowerEntity;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.repos.BucketRepo;
 import com.accenture.microservice.repos.EvidenceRepo;
-import com.accenture.microservice.repos.FlowerRepo;
-import com.accenture.microservice.repos.UserRepo;
+import com.accenture.microservice.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -26,9 +26,7 @@ import java.util.Map;
 public class MainController {
 
     @Autowired
-    private UserRepo userRepo;
-    @Autowired
-    private FlowerRepo flowerRepo;
+    private FlowerService flowerService;
     @Autowired
     private EvidenceRepo evidenceRepo;
     @Autowired
@@ -42,7 +40,7 @@ public class MainController {
 
     @GetMapping("/m")
     public String view(Map<String, Object> model) {
-        Iterable<FlowerEntity> flowers = flowerRepo.findAll();
+        List<FlowerEntity> flowers = flowerService.findAll();
         model.put("flowers", flowers);
         return "main";
     }
@@ -63,7 +61,7 @@ public class MainController {
     @PostMapping("/ss")
     public String addBucket(@RequestParam String flowername, @RequestParam Long amount, Evidence evidence) {
         Bucket b = new Bucket();
-        FlowerEntity f = flowerRepo.findByName(flowername);
+        FlowerEntity f = flowerService.findByName(flowername);
         b.setFlower(f);
         b.setAmount(amount);
         b.setEvidence(evidence);

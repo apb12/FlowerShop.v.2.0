@@ -1,18 +1,18 @@
 package com.accenture.microservice.service;
 
-import com.accenture.microservice.repos.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.accenture.microservice.entity.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
-@Service
-public class UserService implements UserDetailsService {
-    @Autowired
-    private UserRepo userRepo;
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return userRepo.findByUsername(s);
-    }
+import java.util.List;
+
+public interface UserService extends UserDetailsService {
+     boolean addUser(User user);
+     UserDetails loadUserByUsername(String s) throws UsernameNotFoundException;
+     User findByUsername(String username);
+     void save(User user);
+     User findById(Long id);
+     List<User> findAll();
+
 }
