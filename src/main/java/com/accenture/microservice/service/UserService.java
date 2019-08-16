@@ -14,5 +14,5 @@ public interface UserService extends UserDetailsService {
      void save(User user);
      User findById(Long id);
      List<User> findAll();
-
+     boolean activated(String code);
 }

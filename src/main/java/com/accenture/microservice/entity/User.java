@@ -20,6 +20,8 @@ public class User implements UserDetails, Serializable {
     private String password;
     private Double cash;
     private Double discount;
+    private String email;
+    private String activationCode;
 
     public Set<Role> getRoles() {
         return roles;
@@ -97,6 +99,22 @@ public class User implements UserDetails, Serializable {
 
     public void setDiscount(Double discount) {
         this.discount = discount;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
     }
 }
 
