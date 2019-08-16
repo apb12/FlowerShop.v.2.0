@@ -40,8 +40,12 @@ public class MainController {
 
     @GetMapping("/m")
     public String view(Map<String, Object> model) {
+        User u=((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        if(u.getActivationCode()==null){
         List<FlowerEntity> flowers = flowerService.findAll();
-        model.put("flowers", flowers);
+        model.put("flowers", flowers);}
+        else {
+        model.put("message","Ваш аккаунт не активирован,пройдите аутентефикацию");}
         return "main";
     }
 
