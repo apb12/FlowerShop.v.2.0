@@ -9,7 +9,7 @@ import com.accenture.microservice.service.BucketService;
 import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,8 +39,7 @@ public class MainController {
     }
 
     @GetMapping("/m")
-    public String view(Map<String, Object> model) {
-        User u=((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+    public String view(Map<String, Object> model, @AuthenticationPrincipal User u) {
         if(u.getActivationCode()==null){
         List<FlowerEntity> flowers = flowerService.findAll();
         model.put("flowers", flowers);}
@@ -50,10 +49,10 @@ public class MainController {
     }
 
     @PostMapping("/main")
-    public String add(Model model) {
+    public String add(Model model,@AuthenticationPrincipal User u) {
         Evidence e = new Evidence();
         e.setDate(new Date());
-        e.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        e.setUser(u);
         e.setStatus(EvidenceStatus.DRAFT);
         e.setTotal(0.0);
         evidenceService.save(e);

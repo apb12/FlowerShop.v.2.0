@@ -6,7 +6,7 @@ import com.accenture.microservice.entity.Evidence;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.EvidenceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +22,7 @@ public class UserRoomController {
     private EvidenceService evidenceService;
 
     @GetMapping("/room")
-    public String userRoom(Map<String, Object> model) {
-        User u = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+    public String userRoom(Map<String, Object> model, @AuthenticationPrincipal User u) {
         List<Evidence> drafts = evidenceService.findByUserAndStatus(u, EvidenceStatus.DRAFT);
         List<Evidence> dr = new ArrayList<>();
         for (int i = 0; i < drafts.size(); i++) {
@@ -39,8 +38,7 @@ public class UserRoomController {
     }
 
     @PostMapping("/userroom")
-    public String addToBucket() {
-        User u = ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+    public String addToBucket(@AuthenticationPrincipal User u) {
         List<Evidence> drafts = evidenceService.findByUserAndStatus(u, EvidenceStatus.DRAFT);
         Double sum = 0.0;
         for (Bucket b : drafts.get(drafts.size() - 1).getBucket()) {
