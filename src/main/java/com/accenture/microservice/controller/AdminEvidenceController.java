@@ -7,6 +7,7 @@ import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
 import com.accenture.microservice.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Map;
-
+@Slf4j
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
 public class AdminEvidenceController {
@@ -43,6 +44,7 @@ public class AdminEvidenceController {
     @PostMapping("admin2")
     public String deleteDrafts(@RequestParam Long id) {
         evidenceService.deleteById(id);
+        log.info("заказ "+id+" Удален из базы");
         return "redirect:/admin2";
 
     }
@@ -55,6 +57,7 @@ public class AdminEvidenceController {
         u.setCash(u.getCash() - (e.getTotal() * ((1 - (u.getDiscount() / 100)))));
         userService.save(u);
             e.setStatus(EvidenceStatus.CLOSED);
+            log.info("зхаказ "+id+" закрыт");
             evidenceService.save(e);
         for (Bucket b : e.getBucket()) {
             b.getFlower().setAmount(b.getFlower().getAmount() - b.getAmount());
@@ -62,6 +65,7 @@ public class AdminEvidenceController {
         }
         return "redirect:/admin2";}
         else e.setStatus(EvidenceStatus.DRAFT);
+        log.info("для выполенения заказа "+id+" не хватает средств");
         evidenceService.save(e);
         return "redirect:/admin2";
 

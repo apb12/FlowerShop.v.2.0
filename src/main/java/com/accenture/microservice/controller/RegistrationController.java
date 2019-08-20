@@ -2,6 +2,7 @@ package com.accenture.microservice.controller;
 
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Map;
 
 @Controller
+@Slf4j
 public class RegistrationController {
+
+
 
    @Autowired
     private UserService userService;
@@ -26,8 +30,10 @@ public class RegistrationController {
     public String addUser(User user, Map<String, Object> model) {
         if (userService.addUser(user)) {
             model.put("message", "пользователь с таким логином существует");
+            log.error(user.getUsername()+" такой пользователь существует");
             return "registration";
         }
+        log.info("юзер "+user.getUsername()+" добавлен в базу данных");
         return "redirect:/login";
     }
     @GetMapping("/activate/{code}")
@@ -35,8 +41,10 @@ public class RegistrationController {
         boolean isActivated=userService.activated(code);
         if(isActivated){
             model.addAttribute("message","Активация прошла успешно");
+            log.info("активация прошла успешно");
         }
         else model.addAttribute("message","Активация не удалась");
+        log.info("ошибка активации");
         return "login";
 
     }

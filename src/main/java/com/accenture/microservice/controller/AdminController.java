@@ -2,6 +2,7 @@ package com.accenture.microservice.controller;
 
 import com.accenture.microservice.entity.FlowerEntity;
 import com.accenture.microservice.service.FlowerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import java.util.Map;
 
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
+@Slf4j
 public class AdminController {
 
     @Autowired
@@ -33,6 +35,7 @@ public class AdminController {
         f.setPrice(price);
         f.setAmount(amount);
         flowerService.save(f);
+        log.info(f.getName()+" сохранен в базу");
         return "redirect:/admin";
 
     }
@@ -42,6 +45,7 @@ public class AdminController {
         FlowerEntity f = flowerService.findById(id);
         f.setAmount(f.getAmount() + amount);
         flowerService.save(f);
+        log.info(f.getName() +"количество увеличено на "+amount);
         return "redirect:/admin";
 
     }
@@ -51,6 +55,7 @@ public class AdminController {
         FlowerEntity f = flowerService.findById(id);
         f.setPrice(price);
         flowerService.save(f);
+        log.info(f.getName()+" цена изменена на "+price);
         return "redirect:/admin";
 
     }
@@ -58,6 +63,7 @@ public class AdminController {
     @PostMapping("delete")
     public String deleteFlower(@RequestParam Long id) {
         flowerService.deleteById(id);
+        log.info("цветок с "+id+ "удален со склада");
         return "redirect:/admin";
 
     }

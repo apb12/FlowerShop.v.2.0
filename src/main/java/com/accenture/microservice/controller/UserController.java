@@ -4,6 +4,7 @@ package com.accenture.microservice.controller;
 import com.accenture.microservice.Enums.Role;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
 @RequestMapping("/user")
@@ -53,6 +55,8 @@ public class UserController {
             }
         }
         userService.save(user);
+        log.info("Роль юезра "+user.getUsername()+" обновлена");
+
         return "redirect:/user";
 
     }

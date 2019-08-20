@@ -8,6 +8,7 @@ import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.BucketService;
 import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @SessionAttributes(types = Evidence.class)
 public class MainController {
@@ -44,6 +46,7 @@ public class MainController {
         List<FlowerEntity> flowers = flowerService.findAll();
         model.put("flowers", flowers);}
         else {
+            log.info("попытка входа неактивированного аккаунта "+u.getUsername());
         model.put("message","Ваш аккаунт не активирован,пройдите аутентефикацию");}
         return "main";
     }
@@ -56,6 +59,7 @@ public class MainController {
         e.setStatus(EvidenceStatus.DRAFT);
         e.setTotal(0.0);
         evidenceService.save(e);
+        log.info("Заказ "+e.getId()+"сохранен в базу");
         model.addAttribute(e);
         return "redirect:/m";
 
@@ -70,6 +74,7 @@ public class MainController {
         b.setEvidence(evidence);
         b.setSum(f.getPrice() * amount);
         bucketService.save(b);
+        log.info("корзина "+b.getId()+" сохранена в базу");
         return "redirect:/m";
     }
 }

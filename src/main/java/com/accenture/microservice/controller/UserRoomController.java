@@ -5,6 +5,7 @@ import com.accenture.microservice.entity.Bucket;
 import com.accenture.microservice.entity.Evidence;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.EvidenceService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+@Slf4j
 @Controller
 public class UserRoomController {
     @Autowired
@@ -46,6 +47,7 @@ public class UserRoomController {
         }
         drafts.get(drafts.size() - 1).setTotal(sum);
         evidenceService.save(drafts.get(drafts.size() - 1));
+        log.info("в заказ "+drafts.get(drafts.size()-1).getId()+"добавлены новые позиции");
         return "redirect:/room";
     }
 
@@ -53,6 +55,7 @@ public class UserRoomController {
     public String payForBucket(@RequestParam Long id) {
         Evidence e = evidenceService.findById(id);
         e.setStatus(EvidenceStatus.PAID);
+        log.info("заказ "+id+" обновлен до статуса "+EvidenceStatus.PAID);
         evidenceService.save(e);
         return "redirect:/";
     }
