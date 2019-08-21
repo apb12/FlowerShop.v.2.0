@@ -6,6 +6,7 @@ import com.accenture.microservice.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -19,6 +20,8 @@ public class UserServiceImpl implements UserService {
     private UserRepo userRepo;
     @Autowired
     MailSender mailSender;
+    @Autowired
+    PasswordEncoder passwordEncoder;
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userRepo.findByUsername(s);
@@ -64,6 +67,7 @@ public class UserServiceImpl implements UserService {
         user.setCash(2000.0);
         user.setDiscount(10.0);
         user.setRoles(Collections.singleton(Role.USER));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepo.save(user);
         if(!StringUtils.isEmpty(user.getEmail())){
             String message=String.format(

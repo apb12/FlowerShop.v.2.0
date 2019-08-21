@@ -41,3 +41,665 @@
 2019-08-21 09:49:32.193  INFO 28036 --- [http-nio-8080-exec-7] c.a.m.c.AdminEvidenceController          : заказ 131 Удален из базы
 2019-08-21 09:49:33.257  INFO 28036 --- [http-nio-8080-exec-9] c.a.m.c.AdminEvidenceController          : для выполенения заказа 129 не хватает средств
 2019-08-21 09:49:34.286  INFO 28036 --- [http-nio-8080-exec-1] c.a.m.c.AdminEvidenceController          : заказ 129 Удален из базы
+2019-08-21 10:51:58.765  INFO 27776 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 27776 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 10:51:58.770  INFO 27776 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 10:52:03.056 ERROR 27776 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version 3 - Encode ssript failed! Changes successfully rolled back.
+2019-08-21 10:52:03.282 ERROR 27776 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extention")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extention if not exist pgcrypto
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extention")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extention if not exist pgcrypto
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:370) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:71) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:104) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extention")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extention if not exist pgcrypto
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:253) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:202) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367) ~[flyway-core-5.2.4.jar:na]
+	... 43 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "extention")
+  Position: 8
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:307) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:293) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:270) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:266) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189) ~[flyway-core-5.2.4.jar:na]
+	... 46 common frames omitted
+
+2019-08-21 10:52:53.005  INFO 25228 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 25228 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 10:52:53.012  INFO 25228 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 10:52:56.724 ERROR 25228 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version 3 - Encode ssript failed! Changes successfully rolled back.
+2019-08-21 10:52:57.008 ERROR 25228 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extentsion")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extentsion if not exist pgcrypto
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extentsion")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extentsion if not exist pgcrypto
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:370) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:71) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:104) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "extentsion")
+  Position: 8
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extentsion if not exist pgcrypto
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:253) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:202) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367) ~[flyway-core-5.2.4.jar:na]
+	... 43 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "extentsion")
+  Position: 8
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:307) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:293) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:270) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:266) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189) ~[flyway-core-5.2.4.jar:na]
+	... 46 common frames omitted
+
+2019-08-21 10:53:40.844  INFO 28232 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 28232 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 10:53:40.849  INFO 28232 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 10:53:44.384 ERROR 28232 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version 3 - Encode ssript failed! Changes successfully rolled back.
+2019-08-21 10:53:44.408 ERROR 28232 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "exist")
+  Position: 25
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extension if not exist pgcrypto
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "exist")
+  Position: 25
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extension if not exist pgcrypto
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:370) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:71) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:104) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 42601
+Error Code : 0
+Message    : ОШИБКА: ошибка синтаксиса (примерное положение: "exist")
+  Position: 25
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 1
+Statement  : create extension if not exist pgcrypto
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:253) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:202) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367) ~[flyway-core-5.2.4.jar:na]
+	... 43 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: ошибка синтаксиса (примерное положение: "exist")
+  Position: 25
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:307) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:293) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:270) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:266) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189) ~[flyway-core-5.2.4.jar:na]
+	... 46 common frames omitted
+
+2019-08-21 10:54:10.479  INFO 17528 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 17528 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 10:54:10.484  INFO 17528 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 10:54:13.735 ERROR 17528 --- [restartedMain] o.f.core.internal.command.DbMigrate      : Migration of schema "public" to version 3 - Encode ssript failed! Changes successfully rolled back.
+2019-08-21 10:54:13.926 ERROR 17528 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 3F000
+Error Code : 0
+Message    : ОШИБКА: схема "gen" не существует
+  Position: 41
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 2
+Statement  : update usr set password =crypt(password,gen.salt('bf',8))
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 3F000
+Error Code : 0
+Message    : ОШИБКА: схема "gen" не существует
+  Position: 41
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 2
+Statement  : update usr set password =crypt(password,gen.salt('bf',8))
+
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:370) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$200(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$3.call(DbMigrate.java:284) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.jdbc.TransactionTemplate.execute(TransactionTemplate.java:74) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:281) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:246) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.access$100(DbMigrate.java:54) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:164) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate$2.call(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLAdvisoryLockTemplate.execute(PostgreSQLAdvisoryLockTemplate.java:71) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.postgresql.PostgreSQLConnection.lock(PostgreSQLConnection.java:104) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:155) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:161) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:139) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1395) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1711) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: 
+Migration V3__Encode_ssript.sql failed
+--------------------------------------
+SQL State  : 3F000
+Error Code : 0
+Message    : ОШИБКА: схема "gen" не существует
+  Position: 41
+Location   : db/migration/V3__Encode_ssript.sql (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes\db\migration\V3__Encode_ssript.sql)
+Line       : 2
+Statement  : update usr set password =crypt(password,gen.salt('bf',8))
+
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:253) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:202) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:125) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:77) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:367) ~[flyway-core-5.2.4.jar:na]
+	... 43 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: схема "gen" не существует
+  Position: 41
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2440) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2183) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:308) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:441) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:365) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:307) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:293) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:270) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:266) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:235) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.StandardSqlStatement.execute(StandardSqlStatement.java:42) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:189) ~[flyway-core-5.2.4.jar:na]
+	... 46 common frames omitted
+
+2019-08-21 10:54:39.384  INFO 19004 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 19004 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 10:54:39.389  INFO 19004 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 10:54:46.558  INFO 19004 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.683 seconds (JVM running for 8.259)
+2019-08-21 10:58:52.888  INFO 19004 --- [http-nio-8080-exec-6] c.a.m.controller.MainController          : Заказ 132сохранен в базу
+2019-08-21 10:59:05.283 ERROR 19004 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.accenture.microservice.controller.FlowerRestController.validateOrder(FlowerRestController.java:25) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
+
+2019-08-21 10:59:08.844  INFO 19004 --- [http-nio-8080-exec-10] c.a.m.controller.UserRoomController      : в заказ 132добавлены новые позиции
+2019-08-21 10:59:18.391  INFO 19004 --- [http-nio-8080-exec-3] c.a.m.controller.MainController          : корзина 133 сохранена в базу
+2019-08-21 10:59:21.408  INFO 19004 --- [http-nio-8080-exec-6] c.a.m.controller.UserRoomController      : в заказ 132добавлены новые позиции
+2019-08-21 10:59:23.693  INFO 19004 --- [http-nio-8080-exec-8] c.a.m.controller.UserRoomController      : заказ 132 обновлен до статуса PAID
+2019-08-21 10:59:25.507  INFO 19004 --- [http-nio-8080-exec-10] c.a.m.controller.MainController          : Заказ 134сохранен в базу
+2019-08-21 10:59:41.797  INFO 19004 --- [http-nio-8080-exec-10] c.a.m.c.AdminEvidenceController          : заказ 134 Удален из базы
+2019-08-21 10:59:43.480  INFO 19004 --- [http-nio-8080-exec-1] c.a.m.c.AdminEvidenceController          : для выполенения заказа 132 не хватает средств
+2019-08-21 10:59:44.570  INFO 19004 --- [http-nio-8080-exec-5] c.a.m.c.AdminEvidenceController          : заказ 132 Удален из базы
+2019-08-21 11:00:01.548 ERROR 19004 --- [http-nio-8080-exec-3] w.a.UsernamePasswordAuthenticationFilter : An internal error occurred while trying to authenticate the user.
+
+org.springframework.security.authentication.InternalAuthenticationServiceException: UserDetailsService returned null, which is an interface contract violation
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:110) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:175) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:200) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:94) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:124) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
+
+2019-08-21 11:00:46.342 ERROR 19004 --- [http-nio-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : An internal error occurred while trying to authenticate the user.
+
+org.springframework.security.authentication.InternalAuthenticationServiceException: UserDetailsService returned null, which is an interface contract violation
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:110) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:175) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:200) ~[spring-security-core-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:94) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:124) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
+	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
+
