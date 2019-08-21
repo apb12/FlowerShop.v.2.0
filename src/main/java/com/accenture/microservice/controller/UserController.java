@@ -1,16 +1,21 @@
 package com.accenture.microservice.controller;
 
 
+import com.accenture.microservice.DTO.FlowerDTO;
+import com.accenture.microservice.DTO.UserDTO;
 import com.accenture.microservice.Enums.Role;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -26,10 +31,14 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    ModelMapper mapper=new ModelMapper();
+
     @GetMapping
     public String userContr(Model model){
         List<User>ul=userService.findAll();
-        model.addAttribute("usrlist",ul);
+        Type listType = new TypeToken<List<UserDTO>>(){}.getType();
+//        List<UserDTO>ul=mapper.map(userService.findAll(),listType);
+        model.addAttribute("usrlist",mapper.map(ul,listType));
         return "/user";
     }
     @GetMapping("{user}")

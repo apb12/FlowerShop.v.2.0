@@ -1,5 +1,6 @@
 package com.accenture.microservice.controller;
 
+import com.accenture.microservice.DTO.FlowerDTO;
 import com.accenture.microservice.Enums.EvidenceStatus;
 import com.accenture.microservice.entity.Bucket;
 import com.accenture.microservice.entity.Evidence;
@@ -9,6 +10,8 @@ import com.accenture.microservice.service.BucketService;
 import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +38,8 @@ public class MainController {
     @Autowired
     private BucketService bucketService;
 
+     ModelMapper mapper=new ModelMapper();
+
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
@@ -44,7 +50,9 @@ public class MainController {
     public String view(Map<String, Object> model, @AuthenticationPrincipal User u) {
         if(u.getActivationCode()==null){
         List<FlowerEntity> flowers = flowerService.findAll();
-        model.put("flowers", flowers);}
+            Type listType = new TypeToken<List<FlowerDTO>>(){}.getType();
+           // List<FlowerDTO> flowers = mapper.map(flowerService.findAll(),listType);
+        model.put("flowers", mapper.map(flowers,listType));}
         else {
             log.info("попытка входа неактивированного аккаунта "+u.getUsername());
         model.put("message","Ваш аккаунт не активирован,пройдите аутентефикацию");}

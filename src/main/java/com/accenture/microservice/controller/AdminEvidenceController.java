@@ -1,5 +1,6 @@
 package com.accenture.microservice.controller;
 
+import com.accenture.microservice.DTO.EvidenceDTO;
 import com.accenture.microservice.Enums.EvidenceStatus;
 import com.accenture.microservice.entity.Bucket;
 import com.accenture.microservice.entity.Evidence;
@@ -8,6 +9,8 @@ import com.accenture.microservice.service.EvidenceService;
 import com.accenture.microservice.service.FlowerService;
 import com.accenture.microservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 @Slf4j
@@ -30,14 +34,17 @@ public class AdminEvidenceController {
     @Autowired
     private FlowerService flowerService;
 
+    ModelMapper mapper=new ModelMapper();
+
     @GetMapping("/admin2")
     public String view(Map<String, Object> model) {
+        Type listType = new TypeToken<List<EvidenceDTO>>(){}.getType();
         List<Evidence> evidenceRepoList1 = evidenceService.findByStatus(EvidenceStatus.PAID);
-        model.put("evidence1", evidenceRepoList1);
+        model.put("evidence1", mapper.map(evidenceRepoList1,listType));
         List<Evidence> evidenceRepoList2 = evidenceService.findByStatus(EvidenceStatus.DRAFT);
-        model.put("evidence2", evidenceRepoList2);
+        model.put("evidence2", mapper.map(evidenceRepoList2,listType));
         List<Evidence> evidenceRepoList3 = evidenceService.findByStatus(EvidenceStatus.CLOSED);
-        model.put("evidence3", evidenceRepoList3);
+        model.put("evidence3", mapper.map(evidenceRepoList3,listType));
         return "admin2";
     }
 

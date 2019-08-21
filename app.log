@@ -1,150 +1,43 @@
-2019-08-20 10:53:44.580  INFO 24340 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 24340 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
-2019-08-20 10:53:44.584  INFO 24340 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
-2019-08-20 10:53:51.674  INFO 24340 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.682 seconds (JVM running for 8.302)
-2019-08-20 10:54:34.415 ERROR 24340 --- [http-nio-8080-exec-4] c.a.m.controller.RegistrationController  : u такой пользователь существует
-2019-08-20 10:54:52.118  INFO 24340 --- [http-nio-8080-exec-9] c.a.m.controller.RegistrationController  : юзер dddдобавлен в базу данных
-2019-08-20 12:32:24.509  INFO 4156 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 4156 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
-2019-08-20 12:32:24.514  INFO 4156 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
-2019-08-20 12:32:31.931  INFO 4156 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.932 seconds (JVM running for 8.569)
-2019-08-20 12:33:19.440 ERROR 4156 --- [http-nio-8080-exec-7] c.a.m.controller.RegistrationController  : stas такой пользователь существует
-2019-08-20 12:34:05.038 ERROR 4156 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.mail.MailSendException: Mail server connection failed; nested exception is com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.yandex.ru, 465; timeout -1;
-  nested exception is:
-	java.net.ConnectException: Connection timed out: connect. Failed messages: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.yandex.ru, 465; timeout -1;
-  nested exception is:
-	java.net.ConnectException: Connection timed out: connect; message exceptions (1) are:
-Failed message 1: com.sun.mail.util.MailConnectException: Couldn't connect to host, port: smtp.yandex.ru, 465; timeout -1;
-  nested exception is:
-	java.net.ConnectException: Connection timed out: connect] with root cause
-
-java.net.ConnectException: Connection timed out: connect
-	at java.base/java.net.PlainSocketImpl.connect0(Native Method) ~[na:na]
-	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101) ~[na:na]
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
-	at java.base/java.net.Socket.connect(Socket.java:540) ~[na:na]
-	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:359) ~[javax.mail-1.6.2.jar:1.6.2]
-	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:238) ~[javax.mail-1.6.2.jar:1.6.2]
-	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2175) ~[javax.mail-1.6.2.jar:1.6.2]
-	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:740) ~[javax.mail-1.6.2.jar:1.6.2]
-	at javax.mail.Service.connect(Service.java:366) ~[javax.mail-1.6.2.jar:1.6.2]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:517) ~[spring-context-support-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:436) ~[spring-context-support-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:322) ~[spring-context-support-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:311) ~[spring-context-support-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at com.accenture.microservice.service.MailSender.send(MailSender.java:22) ~[classes/:na]
-	at com.accenture.microservice.service.UserServiceImpl.addUser(UserServiceImpl.java:76) ~[classes/:na]
-	at com.accenture.microservice.controller.RegistrationController.addUser(RegistrationController.java:31) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:124) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:74) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.1.5.RELEASE.jar:5.1.5.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
-
-2019-08-20 12:34:37.404  INFO 4156 --- [http-nio-8080-exec-2] c.a.m.controller.MainController          : Заказ 90сохранен в базу
-2019-08-20 12:34:37.420  INFO 4156 --- [http-nio-8080-exec-1] c.a.m.controller.MainController          : попытка входа неактивированного аккаунта stas
-2019-08-20 12:34:44.566  INFO 4156 --- [http-nio-8080-exec-7] c.a.m.controller.MainController          : Заказ 91сохранен в базу
-2019-08-20 12:35:06.849 ERROR 4156 --- [http-nio-8080-exec-10] c.a.m.controller.FlowerRestController    : валидация не успешна marina
-2019-08-20 12:35:06.997  INFO 4156 --- [http-nio-8080-exec-2] c.a.m.controller.MainController          : корзина 92 сохранена в базу
-2019-08-20 12:35:08.962  INFO 4156 --- [http-nio-8080-exec-3] c.a.m.controller.MainController          : корзина 93 сохранена в базу
-2019-08-20 12:35:10.868  INFO 4156 --- [http-nio-8080-exec-5] c.a.m.controller.MainController          : корзина 94 сохранена в базу
-2019-08-20 12:35:11.680  INFO 4156 --- [http-nio-8080-exec-7] c.a.m.controller.UserRoomController      : в заказ 91добавлены новые позиции
-2019-08-20 12:35:13.417  INFO 4156 --- [http-nio-8080-exec-9] c.a.m.controller.UserRoomController      : заказ 91 обновлен до статуса PAID
-2019-08-20 12:35:17.106  INFO 4156 --- [http-nio-8080-exec-1] c.a.m.controller.MainController          : Заказ 95сохранен в базу
-2019-08-20 12:35:27.398  INFO 4156 --- [http-nio-8080-exec-1] c.a.m.c.AdminEvidenceController          : заказ 95 Удален из базы
-2019-08-20 12:35:27.966  INFO 4156 --- [http-nio-8080-exec-4] c.a.m.c.AdminEvidenceController          : заказ 90 Удален из базы
-2019-08-20 12:35:28.760  INFO 4156 --- [http-nio-8080-exec-6] c.a.m.c.AdminEvidenceController          : заказ 87 Удален из базы
-2019-08-20 12:35:29.358  INFO 4156 --- [http-nio-8080-exec-8] c.a.m.c.AdminEvidenceController          : заказ 86 Удален из базы
-2019-08-20 12:35:30.233  INFO 4156 --- [http-nio-8080-exec-10] c.a.m.c.AdminEvidenceController          : зхаказ 91 закрыт
-2019-08-20 12:35:36.912  INFO 4156 --- [http-nio-8080-exec-7] c.a.m.controller.MainController          : Заказ 96сохранен в базу
-2019-08-20 12:35:37.990  INFO 4156 --- [http-nio-8080-exec-10] c.a.m.controller.UserRoomController      : в заказ 96добавлены новые позиции
-2019-08-20 12:37:25.213  INFO 4156 --- [http-nio-8080-exec-9] c.a.m.controller.FlowerRestController    : валидация успешна marina
-2019-08-20 12:37:28.299  INFO 4156 --- [http-nio-8080-exec-10] c.a.m.controller.FlowerRestController    : валидация успешна marina
-2019-08-20 12:37:39.438  INFO 4156 --- [http-nio-8080-exec-4] c.a.m.controller.MainController          : Заказ 97сохранен в базу
-2019-08-20 12:39:19.856  INFO 4156 --- [http-nio-8080-exec-10] c.a.m.controller.UserRestController      : Баланс пользотвателя adminувеличен на 10000.0
+2019-08-21 09:46:01.528  INFO 28036 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 28036 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-21 09:46:01.542  INFO 28036 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-21 09:46:10.160  INFO 28036 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 9.171 seconds (JVM running for 9.785)
+2019-08-21 09:46:27.947  INFO 28036 --- [http-nio-8080-exec-6] c.a.m.controller.MainController          : Заказ 118сохранен в базу
+2019-08-21 09:46:31.173 ERROR 28036 --- [http-nio-8080-exec-9] c.a.m.controller.FlowerRestController    : валидация не успешна marina
+2019-08-21 09:46:31.283  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.controller.MainController          : корзина 119 сохранена в базу
+2019-08-21 09:46:33.958  INFO 28036 --- [http-nio-8080-exec-2] c.a.m.controller.MainController          : корзина 120 сохранена в базу
+2019-08-21 09:46:36.350  INFO 28036 --- [http-nio-8080-exec-4] c.a.m.controller.MainController          : корзина 121 сохранена в базу
+2019-08-21 09:46:37.586  INFO 28036 --- [http-nio-8080-exec-6] c.a.m.controller.UserRoomController      : в заказ 118добавлены новые позиции
+2019-08-21 09:46:41.360  INFO 28036 --- [http-nio-8080-exec-9] c.a.m.controller.UserRoomController      : заказ 118 обновлен до статуса PAID
+2019-08-21 09:46:43.602  INFO 28036 --- [http-nio-8080-exec-1] c.a.m.controller.MainController          : Заказ 122сохранен в базу
+2019-08-21 09:46:54.424  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.controller.MainController          : Заказ 123сохранен в базу
+2019-08-21 09:47:06.518  INFO 28036 --- [http-nio-8080-exec-4] c.a.m.c.AdminEvidenceController          : заказ 113 Удален из базы
+2019-08-21 09:47:06.954  INFO 28036 --- [http-nio-8080-exec-6] c.a.m.c.AdminEvidenceController          : заказ 114 Удален из базы
+2019-08-21 09:47:07.458  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.c.AdminEvidenceController          : заказ 115 Удален из базы
+2019-08-21 09:47:07.939  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.c.AdminEvidenceController          : заказ 116 Удален из базы
+2019-08-21 09:47:08.411  INFO 28036 --- [http-nio-8080-exec-2] c.a.m.c.AdminEvidenceController          : заказ 117 Удален из базы
+2019-08-21 09:47:08.891  INFO 28036 --- [http-nio-8080-exec-4] c.a.m.c.AdminEvidenceController          : заказ 122 Удален из базы
+2019-08-21 09:47:09.355  INFO 28036 --- [http-nio-8080-exec-6] c.a.m.c.AdminEvidenceController          : заказ 123 Удален из базы
+2019-08-21 09:47:10.583  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.c.AdminEvidenceController          : зхаказ 118 закрыт
+2019-08-21 09:47:53.968  INFO 28036 --- [http-nio-8080-exec-5] c.a.m.controller.UserController          : Роль юезра fucyou обновлена
+2019-08-21 09:48:04.902  INFO 28036 --- [http-nio-8080-exec-3] c.a.m.controller.MainController          : Заказ 124сохранен в базу
+2019-08-21 09:48:06.167  INFO 28036 --- [http-nio-8080-exec-5] c.a.m.controller.UserRoomController      : в заказ 124добавлены новые позиции
+2019-08-21 09:48:11.103  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.controller.MainController          : Заказ 125сохранен в базу
+2019-08-21 09:48:15.985  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.controller.FlowerRestController    : валидация успешна marina
+2019-08-21 09:48:20.635  INFO 28036 --- [http-nio-8080-exec-1] c.a.m.controller.MainController          : корзина 126 сохранена в базу
+2019-08-21 09:48:24.260  INFO 28036 --- [http-nio-8080-exec-4] c.a.m.controller.UserRoomController      : в заказ 125добавлены новые позиции
+2019-08-21 09:48:25.423  INFO 28036 --- [http-nio-8080-exec-6] c.a.m.controller.UserRoomController      : заказ 125 обновлен до статуса PAID
+2019-08-21 09:48:28.746  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.controller.MainController          : Заказ 127сохранен в базу
+2019-08-21 09:48:29.915  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.controller.UserRoomController      : в заказ 127добавлены новые позиции
+2019-08-21 09:48:48.405  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.controller.MainController          : Заказ 128сохранен в базу
+2019-08-21 09:48:55.361  INFO 28036 --- [http-nio-8080-exec-5] c.a.m.c.AdminEvidenceController          : заказ 124 Удален из базы
+2019-08-21 09:48:56.188  INFO 28036 --- [http-nio-8080-exec-7] c.a.m.c.AdminEvidenceController          : заказ 127 Удален из базы
+2019-08-21 09:48:57.577  INFO 28036 --- [http-nio-8080-exec-10] c.a.m.c.AdminEvidenceController          : заказ 128 Удален из базы
+2019-08-21 09:48:59.828  INFO 28036 --- [http-nio-8080-exec-2] c.a.m.c.AdminEvidenceController          : зхаказ 125 закрыт
+2019-08-21 09:49:06.128  INFO 28036 --- [http-nio-8080-exec-8] c.a.m.controller.MainController          : Заказ 129сохранен в базу
+2019-08-21 09:49:14.877  INFO 28036 --- [http-nio-8080-exec-1] c.a.m.controller.MainController          : корзина 130 сохранена в базу
+2019-08-21 09:49:15.773  INFO 28036 --- [http-nio-8080-exec-3] c.a.m.controller.UserRoomController      : в заказ 129добавлены новые позиции
+2019-08-21 09:49:16.951  INFO 28036 --- [http-nio-8080-exec-5] c.a.m.controller.UserRoomController      : заказ 129 обновлен до статуса PAID
+2019-08-21 09:49:18.768  INFO 28036 --- [http-nio-8080-exec-7] c.a.m.controller.MainController          : Заказ 131сохранен в базу
+2019-08-21 09:49:32.193  INFO 28036 --- [http-nio-8080-exec-7] c.a.m.c.AdminEvidenceController          : заказ 131 Удален из базы
+2019-08-21 09:49:33.257  INFO 28036 --- [http-nio-8080-exec-9] c.a.m.c.AdminEvidenceController          : для выполенения заказа 129 не хватает средств
+2019-08-21 09:49:34.286  INFO 28036 --- [http-nio-8080-exec-1] c.a.m.c.AdminEvidenceController          : заказ 129 Удален из базы

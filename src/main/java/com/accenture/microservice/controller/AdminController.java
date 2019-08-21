@@ -1,8 +1,11 @@
 package com.accenture.microservice.controller;
 
+import com.accenture.microservice.DTO.FlowerDTO;
 import com.accenture.microservice.entity.FlowerEntity;
 import com.accenture.microservice.service.FlowerService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Map;
 
@@ -20,16 +24,19 @@ public class AdminController {
 
     @Autowired
     FlowerService flowerService;
+    ModelMapper mapper =new ModelMapper();
 
     @GetMapping("admin")
     public String view(Map<String, Object> model) {
         List<FlowerEntity> flowers = flowerService.findAll();
-        model.put("flowers", flowers);
+        Type listType = new TypeToken<List<FlowerDTO>>(){}.getType();
+//        List<FlowerDTO> flowers = mapper.map(flowerService.findAll(),listType);
+        model.put("flowers", mapper.map(flowers,listType));
         return "admin";
     }
 
     @PostMapping("admin")
-    public String add(@RequestParam String name, @RequestParam Double price, @RequestParam Long amount, Map<String, Object> model) {
+    public String add(@RequestParam String name, @RequestParam Double price, @RequestParam Long amount) {
         FlowerEntity f = new FlowerEntity();
         f.setName(name);
         f.setPrice(price);

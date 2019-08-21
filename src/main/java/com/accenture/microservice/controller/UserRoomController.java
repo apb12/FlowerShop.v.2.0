@@ -1,11 +1,16 @@
 package com.accenture.microservice.controller;
 
+import com.accenture.microservice.DTO.BucketDTO;
+import com.accenture.microservice.DTO.EvidenceDTO;
+import com.accenture.microservice.DTO.UserDTO;
 import com.accenture.microservice.Enums.EvidenceStatus;
 import com.accenture.microservice.entity.Bucket;
 import com.accenture.microservice.entity.Evidence;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.EvidenceService;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -13,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,8 +28,11 @@ public class UserRoomController {
     @Autowired
     private EvidenceService evidenceService;
 
+    ModelMapper mapper=new ModelMapper();
+
     @GetMapping("/room")
     public String userRoom(Map<String, Object> model, @AuthenticationPrincipal User u) {
+        Type listType = new TypeToken<List<EvidenceDTO>>(){}.getType();
         List<Evidence> drafts = evidenceService.findByUserAndStatus(u, EvidenceStatus.DRAFT);
         List<Evidence> dr = new ArrayList<>();
         for (int i = 0; i < drafts.size(); i++) {
@@ -32,9 +41,9 @@ public class UserRoomController {
             }
         }
         List<Evidence> drafts1 = evidenceService.findByUserAndStatus(u, EvidenceStatus.CLOSED);
-        model.put("evidence", dr);
-        model.put("evidence1", drafts1);
-        model.put("user", u);
+        model.put("evidence", mapper.map(dr,listType));
+        model.put("evidence1", mapper.map(drafts1,listType));
+        model.put("user", mapper.map(u, UserDTO.class));
         return "userroom";
     }
 
@@ -62,9 +71,10 @@ public class UserRoomController {
 
     @PostMapping("/us")
     public String showBucket(@RequestParam Long id, Map<String, Object> model) {
+        Type listType = new TypeToken<List<BucketDTO>>(){}.getType();
         Evidence ev = evidenceService.findById(id);
         List<Bucket> b = ev.getBucket();
-        model.put("show", b);
+        model.put("show", mapper.map(b,listType));
         return "nextby";
     }
 
