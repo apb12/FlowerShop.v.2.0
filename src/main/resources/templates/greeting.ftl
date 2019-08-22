@@ -1,19 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Welcome to FlowerShop</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+
+<@c.page>
 <div align="center">Приветсвуем вас в нашем цветочном магазине</div>
 <div align="center">
     <div align="center">
         <form action="/main" method="post">
-            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <input type="submit" value="Главная страница">
 
         </form>
     </div>
 </div>
-</body>
-</html>
+</@c.page>

@@ -1,31 +1,29 @@
-<!DOCTYPE HTML>
-<head>
-    <title>Registration</title>
+<#import "parts/common.ftl" as c>
+<#import "parts/log.ftl" as l>
+<@c.page>
     <script src="http://code.jquery.com/jquery-2.2.4.js"
             type="text/javascript"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
 
+<#if flowers??>
 <div align="center">Список товаров</div>
-{{#flowers}}
+<#list flowers as flower>
     <div align="center">
-        <b>{{name}}</b>
-        <span>{{price}}</span>
-        <i>{{amount}}</i>
+        <b>${flower.name}</b>
+        <span>${flower.price}</span>
+        <i>${flower.amount}</i>
         <form action="/ss" method="post">
             <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" id="amount" required/>
-            <input type="hidden" name="flowername" id="flowername" value="{{name}}"/>
-            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            <input type="hidden" name="flowername" id="flowername" value="${flower.name}"/>
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <input type="submit" value="положить в корзину"/>
         </form>
-{{/flowers}}
-{{#message}}
+    </div>
+</#list>
+</#if>
+
     <div align="center">
-        <b>{{message}}</b>
-
-{{/message}}
-
+        <#if message??><b>${message}</b></#if>
 </div>
 <script>
     $(document).ready(function() {
@@ -49,15 +47,9 @@
 <div align="center">
     <form action="/userroom" method="post">
         <input type="submit" value="Корзина"/>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
     </form>
+    <@l.logout />
 </div>
-</div>
-<div align="center">
-    <form action="/logout" method="post">
-        <input type="submit" value="Выход"/>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-    </form>
-</div>
-</body>
+</@c.page>
 

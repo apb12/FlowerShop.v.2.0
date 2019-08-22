@@ -1,26 +1,17 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Страница регистрации</title>
+<#import "parts/common.ftl" as c>
+<#import "parts/log.ftl" as l>
+<@c.page>
     <script src="http://code.jquery.com/jquery-2.2.4.js"
             type="text/javascript"></script>
-</head>
-<body>
-<div align="center">
-    {{#message}}
-            <b>{{message}}</b>
-        {{/message}}
-</div>
+
 
 <div align="center">
-    <form action="/registration" method="post">
-        <div><label> Логин : <input type="text" id="username" name="username"/> </label></div>
-        <div><label> Пароль : <input type="password" name="password"/> </label></div>
-        <div><label> Email : <input type="email" name="email" placeholder="sss@SSS.com"/> </label></div>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-        <div><input type="submit" value="регистрация"/></div>
-    </form>
+
+    <#if message??> <b>${message}</b></#if>
+
 </div>
+<@l.login "/registration" />
+<@l.logout />
 <script>
     $(document).ready(function() {
                                          $('#username').blur(function() {
@@ -39,8 +30,8 @@
                                         });
                                      });
 </script>
-</body>
-</html>
+</@c.page>
+
 
 
 

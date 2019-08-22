@@ -1,13 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Админ панель</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
+<#import "parts/common.ftl" as c>
+<#import "parts/log.ftl" as l>
+<@c.page>
 <div>Добавдение цветов на склад
     <form method="post" action="admin">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="text" name="name" placeholder="название цветка"/>
         <input type="integer" name="price" placeholder="Цена"/>
         <input type="integer" name="amount" placeholder="Количество"/>
@@ -15,10 +11,9 @@
     </form>
 </div>
 
-<body>
 <div>Удаление цветка со склада
     <form method="post" action="delete">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <button type="submit">Удалить цветок</button>
     </form>
@@ -26,7 +21,7 @@
 
 <div>Добавить количество цветов на склад
     <form method="post" action="addamount">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" placeholder="количество"/>
         <button type="submit">Добавить количество</button>
@@ -34,23 +29,21 @@
 </div>
 <div>Изменение цены
     <form method="post" action="newprice">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="price" placeholder="цена"/>
-        <!--    <input type="integer" name="price" placeholder="цена"/>-->
-        <!--    <input type="integer" name="amount" placeholder="количество"/>-->
         <button type="submit">Изменить цену</button>
     </form>
 </div>
 
 <div>Склад цветов</div>
-{{#flowers}}
+<#list flowers as flower>
     <div>
-        <b>{{id}}</b>
-        <b>{{name}}</b>
-        <span>{{price}}</span>
-        <i>{{amount}}</i>
-{{/flowers}}
+        <b>${flower.id}</b>
+        <b>${flower.name}</b>
+        <span>${flower.price}</span>
+        <i>${flower.amount}</i>
+</#list>
 </div>
 
 <div align="center">
@@ -59,12 +52,5 @@
 <div align="center">
     <a href="/user">Пользователи</a>
 </div>
-<div align="center">
-    <form action="/logout" method="post">
-        <input type="submit" value="Выход"/>
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
-    </form>
-</div>
-
-</body>
-</html>
+<@l.logout />
+</@c.page>
