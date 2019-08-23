@@ -3,5 +3,5 @@
 
 <@c.page>
 <@l.login "/login" />
-<div align="center"><a href="/registration">Регистрация</a></div>
+<div><a href="/registration">Регистрация</a></div>
 </@c.page>

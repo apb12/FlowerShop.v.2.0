@@ -10,8 +10,4 @@
 
 </#list>
 </div>
-<div align="center">
-    <a href="/admin">В админку</a>
-    <@l.logout />
-</div>
 </@c.page>

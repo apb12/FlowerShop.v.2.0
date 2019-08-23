@@ -11,7 +11,7 @@
         <form action="/admin3" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <input type="hidden" name="id" value="${e1.id}"/>
-            <input type="submit" value="Выполнить">
+            <button class="btn btn-primary" type="submit">Выполнить</button>
         </form>
 </#list>
 </div>
@@ -25,7 +25,7 @@
         <form action="/admin2" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <input type="hidden" name="id" value="${e2.id}"/>
-            <input type="submit" value="удалить">
+            <button class="btn btn-primary" type="submit">Удалить</button>
         </form>
     </#list>
 </div>
@@ -38,8 +38,4 @@
         <i>${e3.status}</i>
     </#list>
 </div>
-<div align="center">
-    <a href="/admin">В админку</a>
-</div>
-<@l.logout />
 </@c.page>

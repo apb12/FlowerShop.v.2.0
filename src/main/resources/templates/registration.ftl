@@ -11,7 +11,6 @@
 
 </div>
 <@l.login "/registration" />
-<@l.logout />
 <script>
     $(document).ready(function() {
                                          $('#username').blur(function() {

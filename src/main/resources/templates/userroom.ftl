@@ -18,7 +18,7 @@
         <form action="/pay" method="post">
             <input type="hidden" name="id" value="${evidences.id}"/>
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-            <input type="submit" value="Оплатить заказ"/>
+            <button class="btn btn-primary" type="submit">Оплатить заказ</button>
         </form>
 </#list>
 </div>
@@ -35,15 +35,7 @@
     <form action="/us" method="post">
         <input type="number" name="id" placeholder="id"/>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <input type="submit" value="расшифрока заказа"/>
+        <button class="btn btn-primary" type="submit">распечатка заказа</button>
     </form>
 </div>
-<div align="center">
-    <form action="/main" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-        <input type="submit" value="На главную"/>
-    </form>
-
-</div>
-<@l.logout />
 </@c.page>

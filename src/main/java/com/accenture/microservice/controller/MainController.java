@@ -59,7 +59,7 @@ public class MainController {
         return "main";
     }
 
-    @PostMapping("/main")
+    @GetMapping("/main")
     public String add(Model model,@AuthenticationPrincipal User u) {
         Evidence e = new Evidence();
         e.setDate(new Date());

@@ -7,7 +7,7 @@
         <input type="text" name="name" placeholder="название цветка"/>
         <input type="integer" name="price" placeholder="Цена"/>
         <input type="integer" name="amount" placeholder="Количество"/>
-        <button type="submit">Добавить на склад</button>
+        <button class="btn btn-primary" type="submit">Добавить на склал</button>
     </form>
 </div>
 
@@ -15,7 +15,7 @@
     <form method="post" action="delete">
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
-        <button type="submit">Удалить цветок</button>
+        <button class="btn btn-primary" type="submit">Удалить цветок</button>
     </form>
 </div>
 
@@ -24,7 +24,7 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" placeholder="количество"/>
-        <button type="submit">Добавить количество</button>
+        <button class="btn btn-primary" type="submit">Добавить количество</button>
     </form>
 </div>
 <div>Изменение цены
@@ -32,7 +32,7 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="id" placeholder="Id"/>
         <input type="number" step=1 min=1 pattern=[0-9]{3} name="price" placeholder="цена"/>
-        <button type="submit">Изменить цену</button>
+        <button class="btn btn-primary" type="submit">Изменить цену</button>
     </form>
 </div>
 
@@ -52,5 +52,4 @@
 <div align="center">
     <a href="/user">Пользователи</a>
 </div>
-<@l.logout />
 </@c.page>

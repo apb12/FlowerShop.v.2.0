@@ -11,8 +11,4 @@
 
 </#list>
 </div>
-<div align="center">
-    <a href="/room">Продолжить покупки</a>
-    <@l.logout/>
-</div>
 </@c.page>

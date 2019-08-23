@@ -16,7 +16,7 @@
             <input type="number" step=1 min=1 pattern=[0-9]{3} name="amount" id="amount" required/>
             <input type="hidden" name="flowername" id="flowername" value="${flower.name}"/>
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-            <input type="submit" value="положить в корзину"/>
+            <<button class="btn btn-primary ml-2" type="submit">Положить в корзину</button>
         </form>
     </div>
 </#list>
@@ -46,10 +46,9 @@
 </script>
 <div align="center">
     <form action="/userroom" method="post">
-        <input type="submit" value="Корзина"/>
+        <button class="btn btn-primary mt-2" type="submit">Корзина</button>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
     </form>
-    <@l.logout />
 </div>
 </@c.page>
 

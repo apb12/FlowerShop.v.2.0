@@ -81,5 +81,9 @@ public class User implements UserDetails, Serializable {
         this.password = password;
     }
 
+    public boolean isAdmin(){
+        return roles.contains(Role.ADMIN);
+    }
+
 }
 
