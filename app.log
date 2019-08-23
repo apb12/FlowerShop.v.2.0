@@ -6889,3 +6889,28 @@ java.util.NoSuchElementException: No value present
 2019-08-23 11:43:54.513  INFO 34756 --- [http-nio-8080-exec-7] c.a.m.controller.MainController          : Заказ 320сохранен в базу
 2019-08-23 11:48:12.599  INFO 34756 --- [http-nio-8080-exec-10] c.a.m.controller.MainController          : Заказ 321сохранен в базу
 2019-08-23 11:48:19.114  INFO 34756 --- [http-nio-8080-exec-7] c.a.m.controller.MainController          : Заказ 322сохранен в базу
+2019-08-23 12:28:37.740  INFO 27688 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 27688 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 12:28:37.744  INFO 27688 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 12:28:45.257  INFO 27688 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.042 seconds (JVM running for 8.723)
+2019-08-23 12:30:15.651 ERROR 27688 --- [http-nio-8080-exec-2] c.a.m.controller.RegistrationController  : marina такой пользователь существует
+2019-08-23 12:31:07.823 ERROR 27688 --- [http-nio-8080-exec-6] c.a.m.controller.RegistrationController  : admin такой пользователь существует
+2019-08-23 12:37:24.729  INFO 33696 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 33696 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 12:37:24.745  INFO 33696 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 12:37:32.279  INFO 33696 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.035 seconds (JVM running for 8.647)
+2019-08-23 12:45:43.179  INFO 27316 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 27316 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 12:45:43.183  INFO 27316 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 12:45:50.953  INFO 27316 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.22 seconds (JVM running for 8.879)
+2019-08-23 12:47:41.027  INFO 32132 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 32132 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 12:47:41.034  INFO 32132 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 12:47:48.085  INFO 32132 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.499 seconds (JVM running for 8.161)
+2019-08-23 12:48:17.706 ERROR 32132 --- [http-nio-8080-exec-8] c.a.m.controller.RegistrationController  : stas такой пользователь существует
+2019-08-23 13:02:22.029  INFO 26112 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 26112 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 13:02:22.034  INFO 26112 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 13:02:29.335  INFO 26112 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.847 seconds (JVM running for 8.489)
+2019-08-23 13:07:29.447  INFO 30420 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 30420 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 13:07:29.451  INFO 30420 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 13:07:36.997  INFO 30420 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.057 seconds (JVM running for 8.702)
+2019-08-23 13:08:43.143  INFO 30248 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 30248 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-23 13:08:43.143  INFO 30248 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-23 13:08:51.150  INFO 30248 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.442 seconds (JVM running for 9.084)
+2019-08-23 14:30:22.040 ERROR 30248 --- [http-nio-8080-exec-4] c.a.m.controller.RegistrationController  : stas такой пользователь существует

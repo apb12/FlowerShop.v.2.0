@@ -7,6 +7,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
@@ -20,10 +22,17 @@ public class User implements UserDetails, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotBlank(message = "Username cant be empty")
     private String username;
+    @NotBlank(message = "Password cant be empty")
     private String password;
+    @Transient
+    @NotBlank(message = "Password confirmation cant be empty")
+    private String password2;
     private Double cash;
     private Double discount;
+    @Email(message = "Seems like this text is not emal")
+    @NotBlank(message = "Email cant be empty")
     private String email;
     private String activationCode;
 

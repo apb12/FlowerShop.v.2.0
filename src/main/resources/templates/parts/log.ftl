@@ -4,19 +4,53 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"> Логин :</label>
             <div class="col-sm-6">
-            <input type="text" id="username" name="username" class="form-control"/>
+            <input type="text" id="username" name="username" class="form-control
+             ${(usernameError??)?string('is-invalid','')}"
+            placeholder="User name"/>
+                <#if usernameError??>
+                <div class="invalid-feedback">
+                    ${usernameError}
+                </div>
+            </#if>
             </div>
         </div>
         <div class="form-group row">
             <label  class="col-sm-2 col-form-label"> Пароль : </label>
             <div class="col-sm-6">
-            <input type="password" name="password" class="form-control"/>
+            <input type="password" name="password" class="form-control
+             ${(passwordError??)?string('is-invalid','')}"
+             placeholder="Password"/>
+                <#if passwordError??>
+                <div class="invalid-feedback">
+                    ${passwordError}
+                </div>
+            </#if>
             </div>
         </div>
-        <#if path=="/registration"> <div class="form-group row">
+        <#if path=="/registration">
+        <div class="form-group row">
+    <label  class="col-sm-2 col-form-label"> Повторите пароль : </label>
+    <div class="col-sm-6">
+        <input type="password" name="password2" class="form-control
+             ${(password2Error??)?string('is-invalid','')}"
+               placeholder="Confirm password"/>
+        <#if password2Error??>
+        <div class="invalid-feedback">
+            ${password2Error}
+        </div>
+    </#if>
+</div>
+</div>
+        <div class="form-group row">
         <label class="col-sm-2 col-form-label" > Email :</label>
         <div class="col-sm-6">
-        <input type="email" name="email" placeholder="sss@SSS.com" class="form-control"/>
+        <input type="text" name="email"  class="form-control ${(emailError??)?string('is-invalid','')}"
+               placeholder="Email@email.com"/>
+            <#if emailError??>
+            <div class="invalid-feedback">
+                ${emailError}
+            </div>
+        </#if>
         </div>
     </div>
     </#if>
