@@ -4,7 +4,7 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"> Логин :</label>
             <div class="col-sm-6">
-            <input type="text" id="username" name="username" class="form-control
+            <input type="text" id="username" name="username" value="<#if user??>${user.username}</#if>" class="form-control
              ${(usernameError??)?string('is-invalid','')}"
             placeholder="User name"/>
                 <#if usernameError??>
@@ -44,7 +44,7 @@
         <div class="form-group row">
         <label class="col-sm-2 col-form-label" > Email :</label>
         <div class="col-sm-6">
-        <input type="text" name="email"  class="form-control ${(emailError??)?string('is-invalid','')}"
+        <input type="text" name="email" value="<#if user??>${user.email}</#if>" class="form-control ${(emailError??)?string('is-invalid','')}"
                placeholder="Email@email.com"/>
             <#if emailError??>
             <div class="invalid-feedback">
