@@ -42,7 +42,7 @@ public class MainController {
 
 
     @GetMapping("/")
-    public String greeting(Map<String, Object> model) {
+    public String greeting() {
         return "greeting";
     }
 

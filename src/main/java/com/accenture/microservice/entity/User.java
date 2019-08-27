@@ -93,6 +93,12 @@ public class User implements UserDetails, Serializable {
     public boolean isAdmin(){
         return roles.contains(Role.ADMIN);
     }
+    public boolean isActivated(){
+        return activationCode==null;
+    }
 
-}
+
+    }
+
+
 

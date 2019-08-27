@@ -11,12 +11,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
             </li>
+            <#if isActivated>
             <li class="nav-item">
                 <a class="nav-link" href="/main">Main</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/room">Your Account</a>
             </li>
+        </#if>
             <#if isAdmin>
             <li class="nav-item">
                 <a class="nav-link" href="/admin">Admin</a>

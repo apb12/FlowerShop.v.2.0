@@ -1,15 +1,18 @@
 package com.accenture.microservice.controller;
 
 
+import com.accenture.microservice.DTO.EvidenceDTO;
 import com.accenture.microservice.DTO.UserDTO;
 import com.accenture.microservice.entity.User;
 import com.accenture.microservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -40,6 +43,13 @@ public class UserRestController {
             return false;}
         return true;
 
+        }
+        @RequestMapping("/findall")
+
+        public List <User> getAllUsers(){
+          //  Type listType = new TypeToken<List<UserDTO>>(){}.getType();
+        //return mapper.map(userService.findAll(),listType);
+            return userService.findAll();
         }
     }
 
