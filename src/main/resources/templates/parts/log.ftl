@@ -54,6 +54,7 @@
         </div>
     </div>
     </#if>
+<#if path=="/registration">
 <div>
 <div class="g-recaptcha" data-sitekey="6LcCLLUUAAAAABZ_XtkobXRzUto-gcsj1W5dQd-E"></div>
 </div>
@@ -61,6 +62,7 @@
 <div class="alert alert-danger" role="alert">
     ${captchaError}
 </div>
+</#if>
 </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
     <#if path=="/registration"><div>

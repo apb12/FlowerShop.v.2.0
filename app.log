@@ -798,3 +798,314 @@ FTL stack trace ("~" means nesting-related):
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
 	at java.base/java.lang.Thread.run(Thread.java:835) ~[na:na]
 
+2019-08-28 15:41:29.998  INFO 12232 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 12232 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 15:41:30.002  INFO 12232 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 15:41:35.263 ERROR 12232 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method) ~[na:na]
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 41 common frames omitted
+
+2019-08-28 15:41:35.282 ERROR 12232 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method) ~[na:na]
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 41 common frames omitted
+
+2019-08-28 15:42:31.921  INFO 20704 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 20704 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 15:42:31.931  INFO 20704 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 15:42:37.396 ERROR 20704 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method) ~[na:na]
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 41 common frames omitted
+
+2019-08-28 15:42:37.417 ERROR 20704 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.accenture.microservice.Application.main(Application.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: 
+Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08001
+Error Code : 0
+Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.internal.database.DatabaseFactory.createDatabase(DatabaseFactory.java:72) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:1670) ~[flyway-core-5.2.4.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:1356) ~[flyway-core-5.2.4.jar:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:65) ~[spring-boot-autoconfigure-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:280) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:195) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.makeConnection(Driver.java:454) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.Driver.connect(Driver.java:256) ~[postgresql-42.2.5.jar:42.2.5]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.2.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:56) ~[flyway-core-5.2.4.jar:na]
+	... 29 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method) ~[na:na]
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:591) ~[na:na]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:70) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:91) ~[postgresql-42.2.5.jar:42.2.5]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:192) ~[postgresql-42.2.5.jar:42.2.5]
+	... 41 common frames omitted
+
+2019-08-28 15:43:13.669  INFO 16724 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 16724 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 15:43:13.669  INFO 16724 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 15:43:21.254  INFO 16724 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.106 seconds (JVM running for 8.67)
+2019-08-28 15:55:02.078  INFO 23044 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 23044 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 15:55:02.078  INFO 23044 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 15:55:08.984  INFO 23044 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.408 seconds (JVM running for 8.049)
+2019-08-28 15:56:18.111  INFO 23044 --- [http-nio-8080-exec-4] c.a.m.controller.MainController          : Заказ 343сохранен в базу
+2019-08-28 15:57:23.294  INFO 9196 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 9196 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 15:57:23.299  INFO 9196 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 15:57:30.881  INFO 9196 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.106 seconds (JVM running for 8.741)
+2019-08-28 16:00:30.422  INFO 728 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 728 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:00:30.425  INFO 728 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:00:38.810  INFO 728 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.88 seconds (JVM running for 9.545)
+2019-08-28 16:01:05.725  INFO 728 --- [http-nio-8080-exec-2] c.a.m.controller.MainController          : Заказ 344сохранен в базу
+2019-08-28 16:02:54.397  INFO 3304 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 3304 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:02:54.402  INFO 3304 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:03:02.769  INFO 3304 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.847 seconds (JVM running for 9.436)
+2019-08-28 16:03:13.920  INFO 3304 --- [http-nio-8080-exec-10] c.a.m.controller.MainController          : Заказ 345сохранен в базу
+2019-08-28 16:09:56.013  INFO 24040 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 24040 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:09:56.016  INFO 24040 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:10:03.613  INFO 24040 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 8.098 seconds (JVM running for 8.723)
+2019-08-28 16:10:37.917  INFO 24040 --- [http-nio-8080-exec-1] c.a.m.c.AdminEvidenceController          : заказ 345 Удален из базы
+2019-08-28 16:10:39.080  INFO 24040 --- [http-nio-8080-exec-4] c.a.m.c.AdminEvidenceController          : заказ 343 Удален из базы
+2019-08-28 16:10:39.900  INFO 24040 --- [http-nio-8080-exec-7] c.a.m.c.AdminEvidenceController          : заказ 342 Удален из базы
+2019-08-28 16:10:40.706  INFO 24040 --- [http-nio-8080-exec-10] c.a.m.c.AdminEvidenceController          : заказ 341 Удален из базы
+2019-08-28 16:10:41.223  INFO 24040 --- [http-nio-8080-exec-3] c.a.m.c.AdminEvidenceController          : заказ 340 Удален из базы
+2019-08-28 16:10:41.706  INFO 24040 --- [http-nio-8080-exec-6] c.a.m.c.AdminEvidenceController          : заказ 339 Удален из базы
+2019-08-28 16:10:42.306  INFO 24040 --- [http-nio-8080-exec-9] c.a.m.c.AdminEvidenceController          : заказ 338 Удален из базы
+2019-08-28 16:10:42.861  INFO 24040 --- [http-nio-8080-exec-2] c.a.m.c.AdminEvidenceController          : заказ 337 Удален из базы
+2019-08-28 16:10:43.619  INFO 24040 --- [http-nio-8080-exec-6] c.a.m.c.AdminEvidenceController          : заказ 344 Удален из базы
+2019-08-28 16:12:09.521  INFO 14828 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 14828 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:12:09.525  INFO 14828 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:12:16.810  INFO 14828 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.746 seconds (JVM running for 8.413)
+2019-08-28 16:13:00.934  INFO 10076 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 10076 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:13:00.934  INFO 10076 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:13:08.083  INFO 10076 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.577 seconds (JVM running for 8.393)
+2019-08-28 16:20:12.153  INFO 4900 --- [restartedMain] com.accenture.microservice.Application   : Starting Application on CPX-E66SUBRG5JO with PID 4900 (C:\Users\stanislav.alekseev\IdeaProjects\microservice\target\classes started by stanislav.alekseev in C:\Users\stanislav.alekseev\IdeaProjects\microservice)
+2019-08-28 16:20:12.158  INFO 4900 --- [restartedMain] com.accenture.microservice.Application   : No active profile set, falling back to default profiles: default
+2019-08-28 16:20:19.148  INFO 4900 --- [restartedMain] com.accenture.microservice.Application   : Started Application in 7.49 seconds (JVM running for 8.086)
