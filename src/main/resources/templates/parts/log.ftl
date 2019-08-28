@@ -54,6 +54,14 @@
         </div>
     </div>
     </#if>
+<div>
+<div class="g-recaptcha" data-sitekey="6LcCLLUUAAAAABZ_XtkobXRzUto-gcsj1W5dQd-E"></div>
+</div>
+<#if captchaError??>
+<div class="alert alert-danger" role="alert">
+    ${captchaError}
+</div>
+</#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
     <#if path=="/registration"><div>
     <button class="btn btn-primary" type="submit">Регистрация</button></div><#else><div><button class="btn btn-primary" type="submit">Вход</button></div></#if>

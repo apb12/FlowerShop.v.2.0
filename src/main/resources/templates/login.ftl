@@ -8,5 +8,6 @@
 </div>
 </#if>
 <@l.login "/login" />
+
 <div><a href="/registration">Регистрация</a></div>
 </@c.page>
